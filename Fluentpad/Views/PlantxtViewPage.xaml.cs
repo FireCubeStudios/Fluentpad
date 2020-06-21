@@ -242,16 +242,6 @@ namespace Fluentpad.Views
                 var reader = new EncodingReader();
                 reader.AddBytes(bytes);
 
-                documentViewModel.CurrentEncoding = Settings.DefaultEncoding switch
-                {
-                    "UTF-8" => Encoding.UTF8,
-                    "Utf8" => Encoding.UTF8,
-                    "UTF-16 LE" => Encoding.Unicode,
-                    "UTF-16 BE" => Encoding.BigEndianUnicode,
-                    "UTF-32" => Encoding.UTF32,
-                    _ => Encoding.ASCII
-                };
-
                 byte[] bom = null;
 
                 try
